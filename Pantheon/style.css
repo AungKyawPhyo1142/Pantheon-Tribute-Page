@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&display=swap');
+
+:root{
+    --primary-color:#C9AA71;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hero-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./Pantheon\ The\ Call.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+    background-size:cover;
+    height: 100vh;
+}
+
+.hero-section .content{
+    font-family: 'Lexend',sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0.5em;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    filter: opacity(0.75);
+}
+
+.hero-section .content h1{
+    font-size: 6rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transform: translateY(-100%);
+    opacity: 0;
+    animation: introTitle forwards 0.5s;
+}
+
+@keyframes introTitle {
+    from{
+        transform: translateY(-100%);
+        opacity: 0;    
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hero-section .content h2{
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 400;
+    transform: translateY(100%);
+    text-transform: uppercase;
+    opacity: 0;
+    animation: introSubtitle forwards 0.5s;
+}
+
+@keyframes introSubtitle {
+    from{
+        transform: translateY(100%);
+        opacity: 0;    
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;    
+    }
+}
+
+/* .hero-section .content .card .circle .logo{
+    aspect-ratio: 1;
+    width: 30%;
+    transform: translateY(-100%);
+    opacity: 0;
+    animation: introTitle forwards 0.75s;
+} */
+
+.content .card{
+    position: relative;
+    width: 300px;
+    height: 150px;
+    margin: 20px;
+    /* background: #333;    */
+    border-radius: 20px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.content .card:hover{
+    width: 600px;
+    transition-delay: 0s;   
+}
+
+.content .card .circle{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: #f00; */
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .card .circle::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background:var(--clr); */
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+
+.content .card:hover .circle::before{
+    clip-path: circle(400px at center);
+}
+
+.content .card .circle .logo{
+    position: relative;
+    aspect-ratio: 1;
+    width: 40%;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.content .card:hover .circle .logo{
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+.contentCard{
+    position: relative;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+}
+
+.content .card:hover .contentCard{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.content .card .contentCard h2{
+    color: var(--primary-color);
+    font-size: 2.5em;
+    line-height: 1em;
+}
+
+.content .contentCard p{
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    font-weight: lighter;
+    margin-top: 1em;
+}
+
+.content .card .product_img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    height: 500px;
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+.content .card:hover .product_img{
+    left: 72%;
+    transform: translate(-50%,-50%) scale(0.45);
+    transition-delay: 0.5s;
+}
+
+.content .btn{
+    text-decoration: none;
+    color: var(--primary-color);
+    margin-top: 1em;
+    border: 1px solid var(--primary-color);
+    padding: 0.65em;
+    border-radius: 25px;
+    font-size: 1.15rem;
+    animation: scrollDownAnimation infinite 2.5s;
+}
+
+@keyframes scrollDownAnimation {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(10%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+
+}
+
+.content .btn:hover{
+    color: #f8dba4;
+}
+
+/* Section 1 */
+.section1{
+    /* background-color: black; */
+    height: 100vh;
+    /* background: url("./pantheon.jfif"); */
+    background: url("./pantheon.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section1 .content{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    filter: opacity(0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section1 .content .left{
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    font-family: 'Poppins',sans-serif;
+    filter: opacity(1);
+    width: 50%;
+
+}
+
+.section1 .content .left h1{
+    font-size: 2.25rem;
+    text-align: center;
+    font-weight: 500;
+}
+.section1 .content .left p{
+    font-size: 1.25rem;
+    line-height: 1.55em;
+    margin-bottom: 1.25em;
+}
+
